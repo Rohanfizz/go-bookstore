@@ -13,3 +13,9 @@ func ParseBody(r *http.Request,x interface{}){
 		}
 	}
 }
+
+func SendOkResponse(w http.ResponseWriter, res []byte){
+	w.Header().Set("Content-Type","pkglication/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(res)
+}
